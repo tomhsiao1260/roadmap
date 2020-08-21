@@ -1,0 +1,168 @@
+  {
+    "name": "Root",
+    "children": [
+      { 
+        "name": "Internet",
+        "children": [
+          { "name": "How does internet work?" },
+          { "name": "What is HTTP?" },
+          { "name": "Browsers and how they work?" },
+          { "name": "DNS and how it works?" },
+          { "name": "What is Domain Name?" },
+          { "name": "What is hoting?" }
+        ] 
+      },
+      { 
+        "name": "HTML",
+        "children": [
+          { "name": "Learn the basics" },
+          { "name": "Writing Semantic HTML" },
+          { "name": "Forms and Validations" },
+          { "name": "Conventions and Best Practices" },
+          { "name": "Accessibility" },
+          { "name": "SEO Basics" }
+        ] 
+      },
+      { 
+        "name": "CSS",
+        "children": [
+          { "name": "Learn the basics" },
+          { 
+            "name": "Making Layouts",
+            "children": [
+              {"name": "Float, Positioning, Display, Box Model, CSS Grid, Flex Box"}
+            ]
+          },
+          { "name": "Responsive design and Media Queries" }
+        ] 
+      },
+      {
+          "name": "JavaScript",
+          "children": [
+              { "name": "Syntax and Basic Constructs" },
+              { "name": "Learn DOM Manipulation" },
+              { "name": "Learn Fetch API / Ajax (XHR)" },
+              { "name": "ES6+ and modular JavaScript" },
+              { "name": "Understand the concepts: Hoisting, Event Bubbling, Scope, Prototype, Shadow DOM, strict," }
+          ]
+      },
+      {
+          "name": "Version Control Systems",
+          "children": [
+              {
+                  "name": "Repo hosting services",
+                  "children": [
+                      {"name": "GitHub"},
+                      {"name": "GitLab"},
+                      {"name": "Bitbucket"}
+                  ]
+              },
+              {"name": "Basic Usage of Git"}
+          ]
+      },
+      {
+          "name": "Web Security Knowledge",
+          "children": [
+                  {"name": "HTTPS"},
+                  {"name": "Content Security Policy"},
+                  {"name": "CORS"},
+                  {"name": "OWASP Security Risks"}
+          ]
+      },
+      {
+          "name": "Package Managers",
+          "children": [
+                  {"name": "npm"},
+                  {"name": "yarn"}
+          ]
+      },
+      {
+          "name": "CSS Architecture",
+          "children": [
+                  {"name": "BEM"},
+                  {"name": "OOCSS"},
+                  {"name": "SMACSS"}
+          ]
+      },
+      {
+          "name": "CSS Preprocessors",
+          "children": [
+                  {"name": "Sass"},
+                  {"name": "PostCSS"},
+                  {"name": "Less"}
+          ]
+      },
+      {
+          "name": "Build Tools",
+          "children": [
+              {
+                "name": "Task Runners",
+                "children": [
+                        {"name": "npm scripts"},
+                        {"name": "Gulp"}
+                ]
+              },
+              {
+                "name": "Module Bundlers",
+                "children": [
+                        {"name": "Webpack"},
+                        {"name": "Rollup"},
+                        {"name": "Parcel"}
+                ]
+              },
+              {
+                "name": "Linters and Formatters",
+                "children": [
+                  {"name": "Prettier"},
+                  {"name": "ESLint"},
+                  {"name": "StandardJS"}
+                ]
+              }
+          ]
+      },
+      {
+          "name": "Pick a Framework",
+          "children": [
+              {
+                "name": "React.js",
+                "children":[
+                        {"name": "Redux"},
+                        {"name": "MobX"}
+                ]
+              },
+              {
+                "name": "Angular",
+                "children":[
+                        {"name": "RxJS"},
+                        {"name": "NgRx"}
+                ]
+              },
+              {
+                "name": "Vue.js",
+                "children":[
+                    {"name": "VueX"}
+                ]
+              }
+          ]
+      },
+      {
+          "name": "Modern CSS",
+          "children": [
+              {"name": "Styled Components"},
+              {"name": "CSS Modules"},
+              {"name": "Styled JSX"},
+              {"name": "Emotion"},
+              {"name": "Radium"},
+              {"name": "Glamorous"}
+          ]
+      },
+      {
+          "name": "Web Components",
+          "children": [
+                  {"name": "HTML Templates"},
+                  {"name": "Custom Elements"},
+                  {"name": "Shadow DOM"}
+          ]
+      }
+    ]
+  }

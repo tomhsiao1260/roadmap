@@ -1,0 +1,86 @@
+:root {
+	--h-roadmap: 4000px;
+	--w-roadmap: 800px;
+	--w-note: 250px;
+	--w-box1: 120px;
+	--w-box2: 300px;
+	--w-box3: 100px;
+}
+
+.container {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	/* border: 1px solid black; */
+	width: calc(var(--w-roadmap) + var(--w-note) + 100px);
+}
+
+.title {
+	position: absolute;
+	width:100%;
+	text-align: center;
+	font-size: 3em;
+}
+
+.note {
+	position: relative;
+	display: inline-block;
+	padding: 10px;
+	margin: 20px 5px;
+	width: var(--w-note);
+	height: var(--h-roadmap);
+	/* border: 1px solid black; */
+}
+
+.roadmap {
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	width: var(--w-roadmap);
+	height: var(--h-roadmap);
+	padding: 10px;
+	margin: 20px 5px;
+	/* border: 1px solid black; */
+}
+
+.roadmap svg {
+	float: left;
+	width: var(--w-roadmap);
+	height: var(--h-roadmap);
+}
+
+.node {
+	position: absolute;
+	text-align: center;
+	border-radius: 3%;
+	border: 1px solid black;
+}
+
+.node.level1 {
+	width: var(--w-box1);
+	padding: 0.5em;
+	background-color: yellow;
+	box-sizing: border-box;
+}
+
+.node.level2 {
+	width: var(--w-box2);
+	padding: 0.2em;
+	background-color: orange;
+	box-sizing: border-box;
+}
+
+.node.level3 {
+	width: var(--w-box3);
+	padding: 0.2em;
+	background-color: yellow;
+	box-sizing: border-box;
+}
+
+.link {
+	stroke-width: 5px;
+	stroke-linecap: round;
+	stroke-dasharray: 1,15;
+	stroke: #6495ED;
+	fill: none;
+}
