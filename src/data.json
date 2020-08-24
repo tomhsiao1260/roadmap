@@ -3,47 +3,49 @@
     "children": [
       { 
         "name": "Internet",
+        "mode": 1,
         "children": [
-          { "name": "How does internet work?" },
-          { "name": "What is HTTP?" },
-          { "name": "Browsers and how they work?" },
-          { "name": "DNS and how it works?" },
-          { "name": "What is Domain Name?" },
-          { "name": "What is hoting?" }
+          { "name": "How does internet work?", "mode": 1},
+          { "name": "What is HTTP?", "mode": 1 },
+          { "name": "Browsers and how they work?", "mode": 1 },
+          { "name": "DNS and how it works?", "mode": 1 },
+          { "name": "What is Domain Name?", "mode": 1 },
+          { "name": "What is hoting?", "mode": 1 }
         ] 
       },
       { 
         "name": "HTML",
         "children": [
-          { "name": "Learn the basics" },
-          { "name": "Writing Semantic HTML" },
-          { "name": "Forms and Validations" },
-          { "name": "Conventions and Best Practices" },
-          { "name": "Accessibility" },
-          { "name": "SEO Basics" }
+          { "name": "Learn the basics", "mode": 1},
+          { "name": "Writing Semantic HTML", "mode": 3 },
+          { "name": "Forms and Validations", "mode": 1 },
+          { "name": "Conventions and Best Practices", "mode": 1 },
+          { "name": "Accessibility", "mode": 3 },
+          { "name": "SEO Basics", "mode": 3 }
         ] 
       },
       { 
         "name": "CSS",
         "children": [
-          { "name": "Learn the basics" },
+          { "name": "Learn the basics", "mode": 1 },
           { 
             "name": "Making Layouts",
+            "mode": 1,
             "children": [
-              {"name": "Float, Positioning, Display, Box Model, CSS Grid, Flex Box"}
+              {"name": "Float, Positioning, Display, Box Model, CSS Grid, Flex Box", "mode": 1}
             ]
           },
-          { "name": "Responsive design and Media Queries" }
+          { "name": "Responsive design and Media Queries", "mode": 1 }
         ] 
       },
       {
           "name": "JavaScript",
           "children": [
-              { "name": "Syntax and Basic Constructs" },
-              { "name": "Learn DOM Manipulation" },
-              { "name": "Learn Fetch API / Ajax (XHR)" },
-              { "name": "ES6+ and modular JavaScript" },
-              { "name": "Understand the concepts: Hoisting, Event Bubbling, Scope, Prototype, Shadow DOM, strict," }
+              { "name": "Syntax and Basic Constructs", "mode": 1 },
+              { "name": "Learn DOM Manipulation", "mode": 1 },
+              { "name": "Learn Fetch API / Ajax (XHR)", "mode": 1 },
+              { "name": "ES6+ and modular JavaScript", "mode": 1 },
+              { "name": "Understand the concepts: Hoisting, Event Bubbling, Scope, Prototype, Shadow DOM, strict,", "mode": 1 }
           ]
       },
       {
@@ -52,16 +54,17 @@
               {
                   "name": "Repo hosting services",
                   "children": [
-                      {"name": "GitHub"},
-                      {"name": "GitLab"},
-                      {"name": "Bitbucket"}
+                      {"name": "GitHub", "mode": 1},
+                      {"name": "GitLab", "mode": 4},
+                      {"name": "Bitbucket", "mode": 4}
                   ]
               },
-              {"name": "Basic Usage of Git"}
+              {"name": "Basic Usage of Git", "mode": 1}
           ]
       },
       {
           "name": "Web Security Knowledge",
+          "mode": 3,
           "children": [
                   {"name": "HTTPS"},
                   {"name": "Content Security Policy"},
@@ -72,24 +75,24 @@
       {
           "name": "Package Managers",
           "children": [
-                  {"name": "npm"},
-                  {"name": "yarn"}
+                  {"name": "npm", "mode": 1},
+                  {"name": "yarn", "mode": 1}
           ]
       },
       {
           "name": "CSS Architecture",
           "children": [
-                  {"name": "BEM"},
-                  {"name": "OOCSS"},
-                  {"name": "SMACSS"}
+                  {"name": "BEM", "mode": 3},
+                  {"name": "OOCSS", "mode": 4},
+                  {"name": "SMACSS", "mode": 4}
           ]
       },
       {
           "name": "CSS Preprocessors",
           "children": [
-                  {"name": "Sass"},
-                  {"name": "PostCSS"},
-                  {"name": "Less"}
+                  {"name": "Sass", "mode": 3},
+                  {"name": "PostCSS", "mode": 3},
+                  {"name": "Less", "mode": 4}
           ]
       },
       {
@@ -98,24 +101,24 @@
               {
                 "name": "Task Runners",
                 "children": [
-                        {"name": "npm scripts"},
-                        {"name": "Gulp"}
+                        {"name": "npm scripts", "mode": 1},
+                        {"name": "Gulp", "mode": 4}
                 ]
               },
               {
                 "name": "Module Bundlers",
                 "children": [
-                        {"name": "Webpack"},
-                        {"name": "Rollup"},
-                        {"name": "Parcel"}
+                        {"name": "Webpack", "mode": 1},
+                        {"name": "Rollup", "mode": 2},
+                        {"name": "Parcel", "mode": 2}
                 ]
               },
               {
                 "name": "Linters and Formatters",
                 "children": [
-                  {"name": "Prettier"},
-                  {"name": "ESLint"},
-                  {"name": "StandardJS"}
+                  {"name": "Prettier", "mode": 3},
+                  {"name": "ESLint", "mode": 3},
+                  {"name": "StandardJS", "mode": 4}
                 ]
               }
           ]
@@ -125,22 +128,25 @@
           "children": [
               {
                 "name": "React.js",
+                "mode": 1,
                 "children":[
-                        {"name": "Redux"},
-                        {"name": "MobX"}
+                        {"name": "Redux", "mode": 1},
+                        {"name": "MobX", "mode": 2}
                 ]
               },
               {
                 "name": "Angular",
+                "mode": 2,
                 "children":[
-                        {"name": "RxJS"},
-                        {"name": "NgRx"}
+                        {"name": "RxJS", "mode": 2},
+                        {"name": "NgRx", "mode": 2}
                 ]
               },
               {
                 "name": "Vue.js",
+                "mode": 2,
                 "children":[
-                    {"name": "VueX"}
+                    {"name": "VueX", "mode": 2}
                 ]
               }
           ]
@@ -148,21 +154,151 @@
       {
           "name": "Modern CSS",
           "children": [
-              {"name": "Styled Components"},
-              {"name": "CSS Modules"},
-              {"name": "Styled JSX"},
-              {"name": "Emotion"},
-              {"name": "Radium"},
-              {"name": "Glamorous"}
+              {"name": "Styled Components", "mode": 1},
+              {"name": "CSS Modules", "mode": 1},
+              {"name": "Styled JSX", "mode": 2},
+              {"name": "Emotion", "mode": 2},
+              {"name": "Radium", "mode": 4},
+              {"name": "Glamorous", "mode": 4}
           ]
       },
       {
           "name": "Web Components",
+          "mode": 3,
           "children": [
-                  {"name": "HTML Templates"},
-                  {"name": "Custom Elements"},
-                  {"name": "Shadow DOM"}
+              {"name": "HTML Templates", "mode": 3},
+              {"name": "Custom Elements", "mode": 3},
+              {"name": "Shadow DOM", "mode": 3}
           ]
-      }
+      },
+      {
+          "name": "CSS Framworks",
+          "children": [
+              {"name": "Reactstrap", "mode": 1},
+              {"name": "Material UI", "mode": 1},
+              {"name": "Tailwind CSS", "mode": 2},
+              {"name": "Chakra UI", "mode": 2},
+              {"name": "Bootstrap", "mode": 1},
+              {"name": "Materialize CSS", "mode": 2},
+              {"name": "Bulma", "mode": 2}
+          ]
+      },
+      {
+          "name": "Testing your Apps",
+          "children": [
+              {"name": "Jest", "mode": 1},
+              {"name": "react-testing-library", "mode": 1},
+              {"name": "Cypress", "mode": 1},
+              {"name": "Enzyme", "mode": 1}
+          ]
+      },
+      {
+          "name": "Type Checkers",
+          "mode": 3,
+          "children": [
+              {"name": "TypeScript", "mode": 1},
+              {"name": "Flow", "mode": 4}
+          ]
+      },
+      {
+          "name": "Progressive Web Apps",
+          "mode": 3,
+          "children": [
+              {
+                  "name": "Calculating, Measuring, Performance",
+                  "mode": 3,
+                  "children":[
+                      {"name": "PRPL Pattern"},
+                      {"name": "RAIL Model"},
+                      {"name": "Performance Metrics"},
+                      {"name": "Using Lighthouse"},
+                      {"name": "Using Dev Tools"}
+                  ]
+              },
+              {
+                  "name": "APIs in PWAs",
+                  "mode": 3,
+                  "children":[
+                      {"name": "Storage"},
+                      {"name": "Web Sockets"},
+                      {"name": "Service Workers"},
+                      {"name": "Location"},
+                      {"name": "Notifications"},
+                      {"name": "Device Orientation"},
+                      {"name": "Payments"},
+                      {"name": "Credentials"}
+                  ]
+              }
+          ]
+      },
+      {
+          "name": "Server Side Rendering (SSR)",
+          "mode": 3,
+          "children": [
+              {
+                  "name": "React.js",
+                  "mode": 1,
+                  "children":[
+                      {"name": "Next.js", "mode": 1},
+                      {"name": "After.js", "mode": 4}
+                  ]
+              },
+              {
+                  "name": "Angular",
+                  "mode": 2,
+                  "children":[
+                      {"name": "Universal", "mode": 2}
+                  ]
+              },
+              {
+                  "name": "Vue.js",
+                  "mode": 2,
+                  "children":[
+                      {"name": "Nuxt.js", "mode": 2}
+                  ]
+              }
+          ]
+      },
+      {
+          "name": "GraphQL",
+          "mode": 3,
+          "children": [
+              {"name": "Apollo", "mode": 1},
+              {"name": "Relay Modern", "mode": 2}
+          ]
+      },
+      {
+          "name": "Static Site Generators",
+          "mode": 3,
+          "children": [
+              {"name": "Next.js", "mode": 1},
+              {"name": "GatsbyJS", "mode": 1},
+              {"name": "Nuxt.js", "mode": 2},
+              {"name": "Vuepress", "mode": 2},
+              {"name": "Jekyll", "mode": 2},
+              {"name": "Hugo", "mode": 2}
+          ]
+      },
+      {
+          "name": "Mobile Applications",
+          "mode": 3,
+          "children": [
+              {"name": "React Native", "mode": 1},
+              {"name": "NativeScript"},
+              {"name": "Flutter"},
+              {"name": "Ionic"}
+          ]
+      },
+      {
+          "name": "Desktop Applications",
+          "mode": 3,
+          "children": [
+              {"name": "Electron", "mode": 1},
+              {"name": "Cario", "mode": 4},
+              {"name": "Proton Native", "mode": 4}
+          ]
+      },
+      { "name": "Web Assembly", "mode": 4},
+      { "name": "Keep Learning ..."}
     ]
-  }
+}

@@ -1,0 +1,22 @@
+[
+    {
+        "mode": 1, 
+        "color": "#000066", 
+        "value": "Personal Recommendation / Opinion"
+    },
+    {
+        "mode": 2, 
+        "color": "#0000ff", 
+        "value": "Alternative Option - Pick this or purple"
+    },
+    {
+        "mode": 3, 
+        "color": "#bf00ff", 
+        "value": "Order in roadmap not strict"
+    },
+    {
+        "mode": 4, 
+        "color": "#4da6ff", 
+        "value": "I wouldn't recommend"
+    }
+]

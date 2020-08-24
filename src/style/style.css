@@ -1,0 +1,139 @@
+body {
+  background-color: #1a1a1a;
+}
+
+header {
+  color: white;
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  font-family: "Arial Black", Gadget, sans-serif;
+  margin: 1em auto 0.2em auto;
+  line-height: 100px;
+}
+
+header div {
+  font-size: 20px;
+  opacity: 0.5;
+  -webkit-animation: blink 1.2s ease-in-out infinite;
+          animation: blink 1.2s ease-in-out infinite;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+
+.container {
+  position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: calc(800px + 250px + 100px);
+}
+
+.note {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  margin: 20px 5px;
+  width: 250px;
+  height: 6000px;
+}
+
+.description {
+  position: fixed;
+  padding: 1%;
+  bottom: 20%;
+  left: 2%;
+  font-size: 15px;
+  background-color: gray;
+  color: #ffffff;
+  border: 2px dashed #d9d9d9;
+  line-height: 32px;
+  border-radius: 5%;
+}
+
+.dot {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  display: inline-block;
+  border: 1.3px solid #d9d9d9;
+}
+
+.roadmap {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  width: 800px;
+  height: 6000px;
+  padding: 10px;
+  margin: 20px 5px;
+  /* border: 1px solid black; */
+}
+
+.roadmap svg {
+  float: left;
+  width: 800px;
+  height: 6000px;
+}
+
+.roadmap svg .link {
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-dasharray: 0.5,15;
+  stroke: #66b3ff;
+  fill: none;
+}
+
+.roadmap .node {
+  position: absolute;
+  text-align: center;
+  border-radius: 5%;
+  color: #404040;
+  font-family: "Arial Black", Gadget, sans-serif;
+}
+
+.roadmap .node.level1 {
+  width: 140px;
+  padding: 1em;
+  font-size: 15px;
+  background-color: yellow;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.roadmap .node.level2 {
+  width: 300px;
+  padding: 0.7em;
+  font-size: 13px;
+  background-color: orange;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.roadmap .node.level3 {
+  width: 100px;
+  padding: 0.5em;
+  font-size: 12px;
+  background-color: yellow;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+@-webkit-keyframes blink {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+/*# sourceMappingURL=style.css.map */

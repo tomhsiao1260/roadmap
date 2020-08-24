@@ -1,0 +1,126 @@
+$h_roadmap: 6000px;
+$w_roadmap: 800px;
+$w_note: 250px;
+$w_box1: 140px;
+$w_box2: 300px;
+$w_box3: 100px;
+
+body {
+    background-color: #1a1a1a;
+}
+
+header {
+    color:white;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    font-family: "Arial Black", Gadget, sans-serif;
+    margin: 1em auto 0.2em auto;
+    line-height: 100px;
+    div{
+        font-size: 20px;
+        opacity: 0.5;
+
+        animation: blink 1.2s ease-in-out infinite;
+        animation-direction: alternate;
+    }
+}
+
+.container {
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+	// border: 1px solid white; 
+	width: calc(#{$w_roadmap} + #{$w_note} + 100px);
+}
+
+.note {
+	position: relative;
+	display: inline-block;
+	padding: 10px;
+	margin: 20px 5px;
+	width: $w_note;
+	height: $h_roadmap;
+    // border: 1px solid white;
+}
+
+.description{
+    position: fixed;
+    padding: 1%;
+    bottom: 20%;
+    left: 2%;
+    font-size:15px;
+    background-color: gray;
+    color: #ffffff;
+    border: 2px dashed #d9d9d9;
+    line-height: 32px;
+    border-radius: 5%;
+}
+.dot{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 1.2px solid #808080;
+}
+
+.roadmap {
+    // border: 1px solid white; 
+	position: relative;
+	display: inline-block;
+	overflow: hidden;
+	width: $w_roadmap;
+	height: $h_roadmap;
+	padding: 10px;
+	margin: 20px 5px;
+    /* border: 1px solid black; */
+    svg {
+        float: left;
+        width: $w_roadmap;
+        height: $h_roadmap;
+        .link {
+            stroke-width: 3px;
+            stroke-linecap: round;
+            stroke-dasharray: 0.5,15;
+            stroke: #66b3ff;
+            fill: none;
+        }
+    }
+    .node {
+        position: absolute;
+        text-align: center;
+        border-radius: 5%;
+        color: #404040;
+        font-family: "Arial Black", Gadget, sans-serif;
+    }
+    .node.level1 {
+            width: $w_box1;
+            padding: 1em;
+            font-size: 15px;
+            background-color: yellow;
+            box-sizing: border-box;
+    }
+    .node.level2 {
+            width: $w_box2;
+            padding: 0.7em;
+            font-size: 13px;
+            background-color: orange;
+            box-sizing: border-box;
+    }
+    .node.level3 {
+            width: $w_box3;
+            padding: 0.5em;
+            font-size: 12px;
+            background-color: yellow;
+            box-sizing: border-box;
+    }
+}
+
+@keyframes blink {
+    0% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0.5;
+    }
+}
