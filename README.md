@@ -7,7 +7,7 @@ Front-end Roadmap | <a href="https://tomhsiao1260.github.io/roadmap/" target="_b
 <h4/>
 
 <p align="center">
-    <img src="./assets/roadmap.gif" width="600px"/>
+    <img src="./src/assets/roadmap.gif" width="600px"/>
 </p>
 
 ## JSON File
