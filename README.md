@@ -2,11 +2,15 @@
 Front-end Roadmap | <a href="https://tomhsiao1260.github.io/roadmap/" target="_blank">View It<a/>
 </h1>
 
-我嘗試使用 D3.js 讓靜態的 <a href="https://roadmap.sh/frontend/" target="_blank">Front-end Roadmap<a/> 變成可以透過點擊來展開、互動
+<h3 align="center">
+我嘗試使用 D3.js 讓靜態的 <a href="https://roadmap.sh/frontend" target="_blank">Front-end Roadmap<a/> 變成可以透過點擊來展開、互動
+<h3/>
 
-### Json File
+## Json File
 
-* ./scr/data.json 儲存了所有的節點資訊
+* ./scr/data.json 儲存了所有的節點資訊，結構如下：
+
+上方 name 為節點名稱，除根節點 Root 以外的節點都會顯示，children 下為子節點，mode 表示該節點的狀態（搭配 description.json 使用）
 
 ```
 {
@@ -28,9 +32,11 @@ Front-end Roadmap | <a href="https://tomhsiao1260.github.io/roadmap/" target="_b
 }
 ```
 
-上方 name 為節點名稱，除根節點 Root 以外的節點都會顯示，children 下為子節點，mode 表示該節點的狀態 （搭配 description.json 使用）
 
-* ./scr/description.json 儲存了左側的浮動說明欄位資訊
+
+* ./scr/description.json 儲存了左側的浮動說明欄位資訊，結構如下：
+
+若上方 mode 的值若與 data.json 中的任一節點的 mode 相同，便會在該節點的左上方加上指定的顏色圈圈，作為該節點的顏色標記。例如："name":  "Internet" 的節點具有 "mode":  1，便會在該節點的左上方加上色碼為 #000066 的顏色圈圈作為標記
 
 ```
 [
@@ -56,8 +62,6 @@ Front-end Roadmap | <a href="https://tomhsiao1260.github.io/roadmap/" target="_b
     }
 ]
 ```
-
-若上方 mode 的值若與 data.json 中的任一節點的 mode 相同，便會在該節點的左上方加上指定的顏色圈圈（ 利用 color 屬性 ），作為該節點的顏色標記。例如："name": "Internet" 的節點具有 "mode": 1，便會在該節點的左上方加上顏色為 #000066 的圈圈作為標記
 
 ### Installation
 
