@@ -1,36 +1,42 @@
 import * as d3 from "d3";
 import "../style/style.css";
+import "../style/clear.css";
 import treeData from '../data.json';
 import Description from './description';
 import list from '../description.json'
 
-var width = 1000;
-var height = 6000;
-var treemap = d3.tree().size([height, width]);
+let width = 1000;
+let height = 6000;
+let treemap = d3.tree().size([height, width]);
 
-var shiftX = 330;
-var shiftY = 15;
-var duration = 750;
-var w_box = [100, 140, 300, 100];
-var i = 0;
+let shiftX = 330;
+let shiftY = 15;
+let duration = 1000;
+let w_box = [100, 140, 300, 100];
+let i = 0;
 
-var note    = d3.select(".container").append("div")
+let note    = d3.select(".container").append("div")
                 .attr("class", "note");
 
-var roadmap = d3.select(".container").append("div")
+let roadmap = d3.select(".container").append("div")
                 .attr("class", "roadmap");
 
-var svg     = roadmap.append("svg");
+let svg     = roadmap.append("svg");
 
 Description();
 
-var root = d3.hierarchy(treeData);
+let root = d3.hierarchy(treeData);
 root.x0 = height / 2;
 root.y0 = 0;
 
 root.children.forEach(collapse);
 
 update(root);
+
+let btn = document.querySelector('.clear');
+btn.addEventListener('click', clear);
+btn.addEventListener('mouseover', showText);
+btn.addEventListener('mouseout', fadeText);
 
 function collapse(d) {
     if(d.children) {
@@ -57,7 +63,7 @@ function update(source) {
                         .text( d => d.data.name )
                         .style("transform", d => `translateX(${source.y0 - shiftX}px) 
                                                   translateY(${source.x0 - shiftY}px)`)
-                        .on('click', click);
+                        .on("click", click);
 
     nodeEnter.append('span')
               .attr("class", "dot")
@@ -87,6 +93,7 @@ function update(source) {
         .duration(duration)
         .style("width","0px")
         .style("height","0px")
+        .style("opacity", 0)
         .style("transform", d => `translateX(${source.y - shiftX}px) 
                                   translateY(${source.x - shiftY}px)`)
         .remove();
@@ -122,28 +129,41 @@ function update(source) {
       d.x0 = d.x;
       d.y0 = d.y;
     });
-  
-    function diagonal(s, d, depth) {
+}
 
-        let dd = w_box[depth-1];
-      
-        let path = `M ${s.y - shiftX} ${s.x}
-                    C ${(s.y + d.y + dd) / 2 - shiftX} ${s.x},
-                      ${(s.y + d.y + dd) / 2 - shiftX} ${d.x},
-                      ${d.y + dd - shiftX} ${d.x}`;
-    
-        return path;
+function diagonal(s, d, depth) {
+
+  let dd = w_box[depth-1];
+
+  let path = `M ${s.y - shiftX} ${s.x}
+              C ${(s.y + d.y + dd) / 2 - shiftX} ${s.x},
+                ${(s.y + d.y + dd) / 2 - shiftX} ${d.x},
+                ${d.y + dd - shiftX} ${d.x}`;
+
+  return path;
+}
+
+function click(d) {
+  if (d.children) {
+      d._children = d.children;
+      d.children = null;
+    } else {
+      d.children = d._children;
+      d._children = null;
     }
-  
-    function click(d) {
-      if (d.children) {
-          d._children = d.children;
-          d.children = null;
-        } else {
-          d.children = d._children;
-          d._children = null;
-        }
-      update(d);
-    }
-  }
+  update(d);
+}
+
+function clear(){
+  root.children.forEach(collapse);
+  update(root);
+}
+function showText(){
+  let clearText = btn.querySelector('div:last-child');
+  clearText.style.display = "block";
+}
+function fadeText(){
+  let clearText = btn.querySelector('div:last-child');
+  clearText.style.display = "none";
+}
 

@@ -3,10 +3,14 @@ Front-end Roadmap | <a href="https://tomhsiao1260.github.io/roadmap/" target="_b
 </h1>
 
 <h4 align="center">
-我嘗試使用 D3.js 讓靜態的 <a href="https://roadmap.sh/frontend" target="_blank">Front-end Roadmap<a/> 變成可以透過點擊來展開、互動
+嘗試使用 D3.js 讓靜態的 <a href="https://roadmap.sh/frontend" target="_blank">Front-end Roadmap<a/> 變成可以透過點擊來展開、互動
 <h4/>
 
-## Json File
+<p align="center">
+    <img src="./assets/roadmap.gif" width="600px"/>
+</p>
+
+## JSON File
 
 ### ./scr/data.json 
 
@@ -45,21 +49,6 @@ Front-end Roadmap | <a href="https://tomhsiao1260.github.io/roadmap/" target="_b
         "mode": 1, 
         "color": "#000066", 
         "value": "Personal Recommendation / Opinion"
-    },
-    {
-        "mode": 2, 
-        "color": "#0000ff", 
-        "value": "Alternative Option - Pick this or purple"
-    },
-    {
-        "mode": 3, 
-        "color": "#bf00ff", 
-        "value": "Order in roadmap not strict"
-    },
-    {
-        "mode": 4, 
-        "color": "#4da6ff", 
-        "value": "I wouldn't recommend"
     }
 ]
 ```
