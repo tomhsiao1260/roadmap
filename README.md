@@ -1,17 +1,18 @@
 <h1 align="center">
 Front-end Roadmap | <a href="https://tomhsiao1260.github.io/roadmap/" target="_blank">View It<a/>
 </h1>
+    
+<h4 align="center">
+( Desktop with full-screen is recommended for a better experience )
+<h4/>
 
 <p align="center">
     <img src="./src/assets/roadmap.gif" width="600px"/>
 </p>
 
 <h4 align="center">
-( Desktop with full-screen is recommended for a better experience )
-<h4/>
-<h3 align="center">
 嘗試使用 D3.js 讓靜態的 <a href="https://roadmap.sh/frontend" target="_blank">Front-end Roadmap<a/> 變成可以透過點擊來展開、互動
-<h3/>
+<h4/>
 
 ## JSON File
 
