@@ -15,10 +15,6 @@ const duration = 1000;
 const wBox = [100, 140, 300, 100];
 let i = 0;
 
-/* eslint-disable-next-line no-unused-vars */
-const note = d3.select('.container').append('div')
-               .attr('class', 'note');
-
 const roadmap = d3.select('.container').append('div')
                 .attr('class', 'roadmap');
 

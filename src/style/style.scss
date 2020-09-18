@@ -11,13 +11,15 @@ body {
 
 header {
     color:white;
-    font-size: 50px;
-    font-weight: bold;
     text-align: center;
     font-family: "Arial Black", Gadget, sans-serif;
-    margin: 1em auto 0.2em auto;
-    line-height: 100px;
-    div{
+    margin: 4.05em auto 0.2em auto;
+    div:first-child{
+        font-size: 3.12em;
+        font-weight: bold;
+        margin-bottom: 50px;
+    }
+    div:last-child {
         font-size: 20px;
         opacity: 0.5;
 
@@ -25,21 +27,17 @@ header {
         animation-direction: alternate;
     }
 }
-
-.container {
-	position: relative;
-	left: 50%;
-	transform: translateX(-50%);
-	width: calc(#{$w_roadmap} + #{$w_note} + 100px);
-}
-
-.note {
-	position: relative;
-	display: inline-block;
-	padding: 10px;
-	margin: 20px 5px;
-	width: $w_note;
-	height: $h_roadmap;
+@media screen and (max-width:600px) {
+    header {
+        margin-top: 3em;
+        div:first-child {
+            font-size: 7vw;
+            margin-bottom: 25px;
+        }
+        div:last-child {
+            font-size: 3vw;
+        }
+    }
 }
 
 .description{
@@ -47,13 +45,13 @@ header {
     padding: 1%;
     bottom: 20%;
     left: 2%;
-    font-size:15px;
+    font-size:1.05vw;
     background-color: gray;
     opacity: 0.7;
     color: #ffffff;
     border: 2px dashed #d9d9d9;
     line-height: 32px;
-    border-radius: 5%;
+    border-radius: 10px;
 }
 .dot{
     height: 15px;
@@ -62,11 +60,29 @@ header {
     display: inline-block;
     border: 1.2px solid #808080;
 }
+@media screen and (max-width:600px) {
+    .description {
+        padding: 2%;
+        bottom: 5%;
+        left: 50%;
+        width: 80%;
+        transform: translateX(-50%);
+        line-height: 20px;
+    }
+    .dot {
+        height: 10px;
+        width: 10px;
+    }
+}
 
-.clear{
-    position: fixed;
-    right: 0;
-    bottom: 0;
+$scale: 0.4;
+$x: (1 - $scale) * 400px;
+$y: (1 - $scale) * 3100px;
+
+.container {
+	position: relative;
+    margin-top: 45px;
+    height: $h_roadmap * $scale;
 }
 
 .roadmap {
@@ -76,7 +92,10 @@ header {
 	width: $w_roadmap;
 	height: $h_roadmap;
 	padding: 10px;
-	margin: 20px 5px;
+    margin: 20px 5px;
+    top: 0%;
+    left: 29%;
+    // transform: translate(-$x, -$y) scale($scale);
     svg {
         float: left;
         width: $w_roadmap;
@@ -116,6 +135,12 @@ header {
             font-size: 12px;
             background-color: yellow;
             box-sizing: border-box;
+    }
+}
+@media screen and (max-width:600px) {
+    .roadmap {
+        left: 0%;
+        transform: translate(-$x, -$y) scale($scale);
     }
 }
 

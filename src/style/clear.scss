@@ -15,6 +15,12 @@ $time-function: cubic-bezier(.77,-0.7,.24,1.64);
     transform: translate(-50%,-50%) scale(0.5);
     border: 0.5em dashed $c2;
 }
+@media screen and (max-width:600px) {
+    .dust {
+        left: 20%;
+        transform: translate(-50%,-50%) scale(0.35);
+    }
+}
   
 .dust{
     transition: all 0.75s 0s;
@@ -23,6 +29,11 @@ $time-function: cubic-bezier(.77,-0.7,.24,1.64);
         border-radius: 0%;
         animation-play-state: paused;
         transform: translate(-50%,-50%) scale(1);
+    }
+    @media screen and (max-width:600px) {
+        &:hover {
+            transform: translate(-50%,-50%) scale(0.5);
+        }
     }
     &::before{
         position: absolute;
