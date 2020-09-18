@@ -1,5 +1,6 @@
 import data from '../description.json';
 
+// rendering the description.json data to the browser
 const Description = () => {
    const desc = document.querySelector('.description');
    data.forEach((list) => {

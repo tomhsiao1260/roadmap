@@ -75,27 +75,22 @@ header {
     }
 }
 
-$scale: 0.4;
-$x: (1 - $scale) * 400px;
-$y: (1 - $scale) * 3100px;
-
 .container {
 	position: relative;
     margin-top: 45px;
-    height: $h_roadmap * $scale;
+    height: $h_roadmap;
 }
 
 .roadmap {
 	position: relative;
 	display: inline-block;
-	overflow: hidden;
-	width: $w_roadmap;
+	overflow: scroll;
+    width: 68%;
 	height: $h_roadmap;
 	padding: 10px;
     margin: 20px 5px;
     top: 0%;
     left: 29%;
-    // transform: translate(-$x, -$y) scale($scale);
     svg {
         float: left;
         width: $w_roadmap;
@@ -140,7 +135,7 @@ $y: (1 - $scale) * 3100px;
 @media screen and (max-width:600px) {
     .roadmap {
         left: 0%;
-        transform: translate(-$x, -$y) scale($scale);
+        width: 90%;
     }
 }
 

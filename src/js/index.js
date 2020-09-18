@@ -5,13 +5,16 @@ import treeData from '../data.json';
 import Description from './description';
 import list from '../description.json';
 
+// size of the treemap
 const width = 1000;
 const height = 6000;
 const treemap = d3.tree().size([height, width]);
 
+// some parameters deal with size, position, animation time
 const shiftX = 330;
 const shiftY = 15;
 const duration = 1000;
+// box size (px) for each treemap level: [root, level1, level2, level3]
 const wBox = [100, 140, 300, 100];
 let i = 0;
 
@@ -38,6 +41,7 @@ btn.addEventListener('mouseout', fadeText);
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-param-reassign */
 function collapse(d) {
+    // collapse all nodes
     if (d.children) {
         d._children = d.children;
         d._children.forEach(collapse);
@@ -46,6 +50,7 @@ function collapse(d) {
 }
 /* eslint-enable no-param-reassign */
 
+// update the state of the treemap
 function update(source) {
     const treeData = treemap(root);
     const nodes = treeData.descendants();
@@ -58,12 +63,15 @@ function update(source) {
                           if (!d.id) { i += 1; d.id = i; }
                           return d.id;
                         });
+    // add click event, name on each node
     const nodeEnter = node.enter().append('div')
                         .attr('class', (d) => `node level${d.depth}`)
                         .text((d) => d.data.name)
                         .style('transform', `translateX(${source.y0 - shiftX}px) 
                                              translateY(${source.x0 - shiftY}px)`)
                         .on('click', click);
+    // add dot to the upper left of the specified node
+    // the color of the dot is based on description.js file
     nodeEnter.append('span')
               .attr('class', 'dot')
               .style('position', 'absolute')
@@ -78,6 +86,7 @@ function update(source) {
                 if (d.data.mode) { return list[d.data.mode - 1].color; }
                 return 'transparent';
               });
+    // If the node has not been expanded, it will be grayed out
     const nodeUpdate = nodeEnter.merge(node);
     nodeUpdate.transition()
               .duration(duration)
@@ -88,6 +97,7 @@ function update(source) {
               .style('color', (d) => { if (d._children) { return 'white'; } })
               .style('background-color', (d) => { if (d._children) { return 'gray'; } });
               /* eslint-enable-next-line consistent-return */
+    // handling node exit
     const nodeExit = node.exit().transition()
         .duration(duration)
         .style('width', '0px')
@@ -98,6 +108,7 @@ function update(source) {
         .remove();
     nodeExit.select('div.node')
             .style('fill-opacity', 1e-6);
+    // process the path between each node
     const link = svg.selectAll('path.link')
                   .data(links, (d) => d.id);
 
@@ -129,6 +140,7 @@ function update(source) {
     /* eslint-enable no-param-reassign */
 }
 
+// generate a path connecting each node (box)
 function diagonal(s, d, depth) {
   const dd = wBox[depth - 1];
 
@@ -140,23 +152,37 @@ function diagonal(s, d, depth) {
   return path;
 }
 
+// decide whether to expand or collapse the node
 /* eslint-disable no-param-reassign */
 function click(d) {
   if (d.children) {
       d._children = d.children;
       d.children = null;
-    } else {
+  } else {
       d.children = d._children;
       d._children = null;
-    }
+  }
   update(d);
 }
 /* eslint-enable no-param-reassign */
 
-function clear() {
+// clear the treemap when the dust ball character is clicked
+function clear(e) {
   root.children.forEach(collapse);
   update(root);
+  const dust = e.currentTarget;
+  const clearText = btn.querySelector('div:last-child');
+  // handling mobile device click events
+  if (dust.classList.contains('active')) {
+    dust.classList.remove('active');
+    clearText.style.display = 'none';
+  } else {
+    dust.classList.add('active');
+    clearText.style.display = 'block';
+  }
 }
+
+// handling clear text display
 function showText() {
   const clearText = btn.querySelector('div:last-child');
   clearText.style.display = 'block';

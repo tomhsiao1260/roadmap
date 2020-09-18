@@ -25,13 +25,19 @@ $time-function: cubic-bezier(.77,-0.7,.24,1.64);
 .dust{
     transition: all 0.75s 0s;
     transition-timing-function: $time-function;
-    &:hover{
-        border-radius: 0%;
-        animation-play-state: paused;
-        transform: translate(-50%,-50%) scale(1);
+    // for desktop
+    @media screen and (min-width:600px) {
+        &:hover{
+            border-radius: 0%;
+            animation-play-state: paused;
+            transform: translate(-50%,-50%) scale(1);
+        }
     }
+    // for mobile
     @media screen and (max-width:600px) {
-        &:hover {
+        &.active{
+            border-radius: 0%;
+            animation-play-state: paused;
             transform: translate(-50%,-50%) scale(0.5);
         }
     }
